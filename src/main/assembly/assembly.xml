@@ -1,0 +1,85 @@
+<!--
+  ~ Copyright © 2019 Censio, LLC. All rights reserved.
+  -->
+
+<assembly
+        xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+
+        <!--NOTICES-->
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>./</outputDirectory>
+            <includes>
+                <include>README*</include>
+                <include>Readme*</include>
+                <include>LICENSE*</include>
+                <include>NOTICE*</include>
+            </includes>
+        </fileSet>
+
+        <!--SCRIPTS-->
+        <fileSet>
+            <directory>${project.basedir}/src/main/bin</directory>
+            <outputDirectory>./bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/bin</directory>
+            <outputDirectory>./bin</outputDirectory>
+            <includes>
+                <include>*.bat</include>
+            </includes>
+            <lineEnding>dos</lineEnding>
+        </fileSet>
+
+        <!--DOCKER FILES-->
+        <fileSet>
+            <directory>${project.basedir}/src/main/docker</directory>
+            <outputDirectory>./</outputDirectory>
+        </fileSet>
+
+        <!--BEANSTALK FILES-->
+        <fileSet>
+            <directory>${project.basedir}/src/main/beanstalk</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <outputDirectory>./</outputDirectory>
+        </fileSet>
+
+        <!--PROJECT JARS-->
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>./</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <excludes>
+                <exclude>*-javadoc*</exclude>
+                <exclude>*-sources*</exclude>
+                <exclude>docs/*</exclude>
+            </excludes>
+        </fileSet>
+
+        <!--DEPENDENCIES-->
+        <fileSet>
+            <directory>${project.build.directory}/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
