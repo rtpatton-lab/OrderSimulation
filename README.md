@@ -1,12 +1,7 @@
-==============================================
-# CSS-Challenge
-
-## Introduction
-
-This is the Cloud Kitchens submission challenge. It was completed using Kotlin,
-and will run fine on any recent JVM.
-
----------------------------------------------------------------------------------------------------------
+********************
+This is a take-home submission challenge for a promisign startup. The code uses Kotlin and can be ran
+using a JVM.
+********************
 
 ## Getting Started
 
@@ -78,26 +73,12 @@ One can imagine for instance, not just traffic, but the distance the driver
 must go to deliver an order. There is also a decay that happens when 
 an order sits with a delivery person.
 
-+ **Display**: For the purposes of time, I used a primary text-based display, but with more time 
-we could have a nice UI to show the system status.
+* doesn't have REST API right now *
 
-+ **REST API**: Right now this is just a console app. It would be 
-nice if this thing had a REST API that allowed you to place
-orders and get the current system status.
+* Software *
+IntelliJ Ultimate
+Oracle JDK
+Sublime text editor
 
-+ **Unit Test Coverage**: Right now coverage stands at **79%**, which isn't bad, but could be better.
-
-
----------------------------------------------------------------------------------------------------------
-
-### Software Used
-1. IntelliJ Ultimate 😎
-2. Oracle JDK
-3. Atom Text editor
-4. Google Music 🎧
-
-### Hardware Used
-1. iMac Mid-2011 🖥
-2. Apple Chiclet keyboard
-3. Apple Magic Mouse
-4. Some vegan ice-cream 🍨
+* Hardware *
+2020 Macbook with M1 chip
